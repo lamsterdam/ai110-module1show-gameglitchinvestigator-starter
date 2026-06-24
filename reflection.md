@@ -31,7 +31,8 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
   It suggested that the Go Lower and Go Higher outcome messages in check_guess function were swapped by mistake, and the fix was to switch them. After switching them I ran the app and verified that when the secret was lower than my guess, I got a Go Lower hint
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
-  One suggestion AI was giving me to resolve my import statement due to files being in different levels. It was suggesting to use conftest.py file but that seemed not needed for this. So I re-prompted it and it then suggested using sys.path instead
+  One suggestion AI was giving me to resolve my import statement due to files being in different levels. It was suggesting to use conftest.py file but that seemed not needed for this. So I re-prompted it and it then suggested using sys.path instead.
+  It also tried importing a function from a file that it was no longer in, so I had to correct it on that
 
 ---
 
@@ -60,3 +61,4 @@ Document at least 3 bugs you found. Add rows as needed.
     I would like to use the prompting startegy of giving an example of what I was expecting as the output and the actual output I saw.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  It showed that AI can still make some seemingly basic mistakes so verifying the output even when it confidently gives an answer is still very important
