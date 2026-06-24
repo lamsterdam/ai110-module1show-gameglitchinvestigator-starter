@@ -31,13 +31,14 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
   It suggested that the Go Lower and Go Higher outcome messages in check_guess function were swapped by mistake, and the fix was to switch them. After switching them I ran the app and verified that when the secret was lower than my guess, I got a Go Lower hint
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+  One suggestion AI was giving me to resolve my import statement due to files being in different levels. It was suggesting to use conftest.py file but that seemed not needed for this. So I re-prompted it and it then suggested using sys.path instead
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
-  I decided if a bug was fixed by using the logic in the app and checking whether the game behaved as I expected now
+  I decided if a bug was fixed by using the logic in the app and checking whether the game behaved as I expected now. For the incorrect hint being shown I provided a high number than the secret and verified that the hint was now too high. For the message I verified that when I switched the difficulty the message changed the range
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
   I ran the test_guess_too_high() test and this showed me that the assertion in three of the tests were not set up correctly. They were missing the outcome part in the result, so this test needed to be updated to access the 0th index only
@@ -48,6 +49,7 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  I would say that reruns in Streamlit is basically refreshing the game with the updated session state.
 
 ---
 
@@ -55,5 +57,6 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+    I would like to use the prompting startegy of giving an example of what I was expecting as the output and the actual output I saw.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.

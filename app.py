@@ -91,6 +91,7 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 # FIXME: Logic breaks here with display message not showing proper range
+# FIX: Updated the message to use the low and high values specific to difficulty
 st.info(
     f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
